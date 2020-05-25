@@ -5,16 +5,29 @@ pygame.font.init()
 '''SUDOKU DESC'''
 class Sudoku:
     ''' ENTER UR SUDOKU PRE-NUMBERES HERE and REPLACE BLANKS WITH 0's  '''
+
+    # board = [
+    #     [7, 8, 0, 4, 0, 0, 1, 2, 0],
+    #     [6, 0, 0, 0, 7, 5, 0, 0, 9],
+    #     [0, 0, 0, 6, 0, 1, 0, 7, 8],
+    #     [0, 0, 7, 0, 4, 0, 2, 6, 0],
+    #     [0, 0, 1, 0, 5, 0, 9, 3, 0],
+    #     [9, 0, 4, 0, 6, 0, 0, 0, 5],
+    #     [0, 7, 0, 3, 0, 0, 0, 1, 2],
+    #     [1, 2, 0, 0, 0, 7, 4, 0, 0],
+    #     [0, 4, 9, 2, 0, 6, 0, 0, 7]
+    # ]
+    
     board = [
-        [7, 8, 0, 4, 0, 0, 1, 2, 0],
-        [6, 0, 0, 0, 7, 5, 0, 0, 9],
-        [0, 0, 0, 6, 0, 1, 0, 7, 8],
-        [0, 0, 7, 0, 4, 0, 2, 6, 0],
-        [0, 0, 1, 0, 5, 0, 9, 3, 0],
-        [9, 0, 4, 0, 6, 0, 0, 0, 5],
-        [0, 7, 0, 3, 0, 0, 0, 1, 2],
-        [1, 2, 0, 0, 0, 7, 4, 0, 0],
-        [0, 4, 9, 2, 0, 6, 0, 0, 7]
+        [5, 0, 9, 0, 0, 0, 4, 0, 0],
+        [7, 0, 8, 3, 0, 4, 9, 0, 0],
+        [6, 0, 1, 0, 0, 0, 7, 3, 0],
+        [4, 6, 2, 5, 0, 0, 0, 0, 0],
+        [3, 8, 5, 7, 2, 0, 6, 4, 9],
+        [1, 0, 7, 4, 0, 8, 2, 0, 0],
+        [2, 0, 0, 1, 0, 0, 0, 0, 4],
+        [0, 0, 3, 0, 4, 0, 0, 8, 7],
+        [0, 7, 0, 0, 5, 3, 0, 0, 6]
     ]
 
     def __init__(self, rows, cols, width, height, win):
@@ -204,8 +217,8 @@ def format_time(secs):
     mat = " " + str(minute) + ":" + str(sec)
     return mat
 
-''' MAIN FUNCTION '''
-def main():
+''' MAIN METHOD HERE '''
+if __name__ == '__main__':
     win = pygame.display.set_mode((540,600))
     pygame.display.set_caption("Sudoku  || by :: ~ A.R ~ :: ")
     board = Sudoku(9, 9, 540, 540, win)
@@ -228,7 +241,5 @@ def main():
 
         redraw_window(win, board, play_time, strikes)
         pygame.display.update()
-
-if __name__ == '__main__':
-    main()
+    '''STOP PYGAME'''    
     pygame.quit()
